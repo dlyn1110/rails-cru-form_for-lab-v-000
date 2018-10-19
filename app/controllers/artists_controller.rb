@@ -5,26 +5,26 @@ class ArtistsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@artist = Artist.find(params[:id])
 	end
 
 	def new
-		@post = Post.new
+		@artist = Artist.new
 	end
 
 	def create
-	  @post = Post.new(params["post"])
-	  @post.save
-	  redirect_to post_path(@post)
+	  @artist = Artist.new(params["artist"])
+	  @artist.save
+	  redirect_to artist_path(@artist)
 	end
 
 	def update
-	  @post = Post.find(params[:id])
-	  @post.update(params["post"])
-	  redirect_to post_path(@post)
+	  @artist = Artist.find(params[:id])
+	  @artist.update(params["artist"])
+	  redirect_to artist_path(@artist)
 	end
 
 	def edit
-	  @post = Post.find(params[:id])
+	  @artist = Artist.find(params[:id])
 	end
 end
